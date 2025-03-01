@@ -22,5 +22,15 @@ ENV PATH="/opt/venv/bin:$PATH"
 CMD ["streamlit", "run", "app.py"]
 
 # comandos docker:
-# docker build -f DockerfileApp -t libertadores-app .
-# docker run --name libertadores-app -p 8501:8501 --rm libertadores-app
+# docker build --platform linux/amd64 -f DockerfileApp -t libertadores-app .
+# docker run --name libertadores-app -p 8000:8000 --rm libertadores-app
+
+# subir las imágenes a hub.docker
+# docker login
+# docker image tag libertadores-app:latest henryragua/libertadores-app:latest
+# docker image push henryragua/libertadores-app:latest
+
+# comandos railway
+# railway login --browserless
+# railway link
+# railway service
