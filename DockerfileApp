@@ -1,0 +1,26 @@
+# Usa una imagen base de Python 3.10 (versión slim para mantener la imagen liviana)
+FROM python:3.10-slim
+
+# Establece el directorio de trabajo
+WORKDIR /app
+
+# Copia el archivo de dependencias primero para aprovechar el cacheo de capas
+COPY requirements.txt .
+
+# Crea el entorno virtual en /opt/venv, actualiza pip e instala las dependencias
+RUN python -m venv /opt/venv && \
+    /opt/venv/bin/pip install --upgrade pip && \
+    /opt/venv/bin/pip install -r requirements.txt
+
+# Copia el resto de la aplicación
+COPY app .
+
+# Ajusta el PATH para usar el entorno virtual por defecto
+ENV PATH="/opt/venv/bin:$PATH"
+
+# Comando de inicio (modifícalo según cómo inicies tu app, aquí se asume que el entrypoint es app.py)
+CMD ["streamlit", "run", "app.py"]
+
+# comandos docker:
+# docker build -f DockerfileApp -t libertadores-app .
+# docker run --name libertadores-app -p 8501:8501 --rm libertadores-app

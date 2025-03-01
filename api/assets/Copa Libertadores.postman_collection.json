@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "2bf52c31-7447-4841-880c-2190d98d66c9",
+		"name": "Copa Libertadores",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2588102",
+		"_collection_link": "https://winter-station-721504.postman.co/workspace/My-Workspace~f8007641-19cb-41e5-8156-c35c21134383/collection/2588102-2bf52c31-7447-4841-880c-2190d98d66c9?action=share&source=collection_link&creator=2588102"
+	},
+	"item": [
+		{
+			"name": "predict",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"round\": \"Groups\",\n    \"homeClub\": \"River Plate\",\n    \"awayClub\": \"Palmeiras\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/predict",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"predict"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "predict",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"round\": \"Groups\",\n    \"homeClub\": \"River Plate\",\n    \"awayClub\": \"Palmeiras\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/predict",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"predict"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sat, 22 Feb 2025 01:53:07 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "21"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": \"Away Win\"\n}"
+				}
+			]
+		}
+	]
+}
