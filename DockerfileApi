@@ -19,7 +19,7 @@ COPY api .
 ENV PATH="/opt/venv/bin:$PATH"
 
 # Comando de inicio (modifícalo según cómo inicies tu app, aquí se asume que el entrypoint es app.py)
-CMD ["fastapi", "run", "main.py", "--port", "80"]
+CMD ["python", "run.py"]
 
 # comandos docker:
 # docker build --platform linux/amd64 -f DockerfileApi -t libertadores-api .
